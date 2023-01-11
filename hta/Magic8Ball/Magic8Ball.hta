@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Magic 8-Ball</title>
+    <hta:application id="Magic8Ball" border="thin" borderstyle="normal" caption="yes" showintaskbar="yes" singleinstance="yes" icon="8ball.ico" systray="yes" />
+    <script type="text/javascript">
+        function askQuestion() {
+            var answers = ["It is certain", "It is decidedly so", "Without a doubt", "Yes definitely",
+                            "You may rely on it", "As I see it, yes", "Most likely", "Outlook good",
+                            "Yes", "Signs point to yes", "Reply hazy try again", "Ask again later",
+                            "Better not tell you now", "Cannot predict now", "Concentrate and ask again",
+                            "Don't count on it", "My reply is no", "My sources say no",
+                            "Outlook not so good", "Very doubtful"];
+
+            var rand = Math.floor(Math.random() * answers.length);
+            document.getElementById("answer").innerHTML = answers[rand];
+        }
+    </script>
+</head>
+<body>
+    <h1>Magic 8-Ball</h1>
+    <form>
+        <label for="question">Enter your question:</label>
+        <input type="text" id="question" name="question">
+        <br>
+        <input type="button" value="Ask" onclick="askQuestion()">
+    </form>
+    <br>
+    <div id="answer"></div>
+</body>
+</html>
